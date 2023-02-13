@@ -1,17 +1,25 @@
 {
-  "name": "exam_js",
+  "name": "@chlo_ee/exam_js",
   "version": "1.0.0",
-  "description": "",
+  "description": "\"API'S for a simple calculator\"",
   "main": "multiplication.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node multiplication.js",
-    "dev":"nodemon multiplication"
-
+    "dev": "nodemon multiplication"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "nodemon": "^2.0.20"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Karky2/chloe_simpleCalculator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Karky2/chloe_simpleCalculator/issues"
+  },
+  "homepage": "https://github.com/Karky2/chloe_simpleCalculator#readme"
 }

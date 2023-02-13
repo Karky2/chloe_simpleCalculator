@@ -3,26 +3,23 @@ const app = express();
 const host = 'localhost'
 const port = 7000
 
-// Define the endpoint for the multiplication API
-app.get('/multiply', function (req, res) {
-  // Get the array of numbers from the query parameters
+// The firsr step is defining the route of carrying out multiplication
+app.get('/multiplying',  (req, res) => {
+  
+  // The second step of getting the array of numbers in query paramaters and do the operation
   var numbers = req.query.numbers;
+  if(!numbers){
+      return res.status(400).send({ error : 'There were no numbers given'})
 
-  // Convert the numbers to an array of integers
-  numbers = numbers.split(',').map(function (num) {
-    return parseInt(num);
-  });
+  }
+  numbers = numbers.split(',').map(Number);
+  let product = numbers.reduce((a, b) => a * b, 1);
 
-  // Calculate the product of the numbers
-  var product = numbers.reduce(function (acc, num) {
-    return acc * num;
-  }, 1);
-
-  // Return the product as a response
+ // We then send the response of the product to the server using res.send
   res.send({ product: product });
 });
 
-// Start the Express app
+// Here we start our server in order for the API to listen to request
 app.listen(7000,  () => {
   console.log(`API listening requests at http://${host}:${port}`);
 });
